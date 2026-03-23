@@ -154,6 +154,37 @@
   .footer-links a:hover { color: #111B21; }
   .footer-tagline { text-align: center; padding: 0 32px 32px; font-size: 13px; color: #667781; }
 
+  /* SCREENSHOTS */
+  .screenshot-wrap {
+    max-width: 900px; margin: 48px auto 0; border-radius: 16px;
+    overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .screenshot-wrap img { width: 100%; display: block; }
+  .screenshot-wrap-sm {
+    max-width: 680px; margin: 40px auto 0; border-radius: 12px;
+    overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.03);
+  }
+  .screenshot-wrap-sm img { width: 100%; display: block; }
+  .screenshot-phone {
+    max-width: 280px; margin: 40px auto 0;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+  }
+  .screenshot-phone img { width: 100%; display: block; }
+  .feature-visual {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    max-width: 1100px; margin: 0 auto; padding: 80px 32px;
+  }
+  .feature-visual.reverse { direction: rtl; }
+  .feature-visual.reverse > * { direction: ltr; }
+  .feature-visual-text h3 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+  .feature-visual-text p { font-size: 17px; color: #667781; line-height: 1.6; }
+  .feature-visual-img { border-radius: 12px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.10); }
+  .feature-visual-img img { width: 100%; display: block; }
+  @media (max-width: 768px) {
+    .feature-visual, .feature-visual.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .screenshot-wrap { margin: 32px 16px 0; }
+  }
+
   /* ANIMATIONS */
   .anim { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .anim.visible { opacity: 1; transform: translateY(0); }
@@ -187,7 +218,7 @@
       <a href="#features" class="hide-mobile">Features</a>
       <a href="#pricing" class="hide-mobile">Pricing</a>
       <a href="#faq" class="hide-mobile">FAQ</a>
-      <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-sm btn-primary">Download Free</a>
+      <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-sm btn-primary">Download Free</a>
     </div>
   </div>
 </nav>
@@ -200,10 +231,13 @@
       <h1>Stop juggling phones.<br><span class="highlight">Start today.</span></h1>
       <p class="sub">SupaMsg is the desktop app that puts all your WhatsApp accounts in one window — with AI, automations, and 48 features to supercharge every conversation.</p>
       <div class="hero-ctas">
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl btn-primary">Download Free for Mac</a>
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl btn-outline">Windows</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl btn-primary">Download Free for Mac</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl btn-outline">Windows</a>
       </div>
       <p class="trust-sm">Free forever for 3 accounts. No credit card needed.</p>
+    </div>
+    <div class="screenshot-wrap anim">
+      <img src="screenshots/01-hero-shot.png" alt="SupaMsg — All your WhatsApp accounts in one window" loading="lazy">
     </div>
   </div>
 </section>
@@ -264,12 +298,45 @@
   </div>
 </section>
 
+<!-- FEATURE: Multi-Account -->
+<div class="feature-visual anim">
+  <div class="feature-visual-text">
+    <h3>All accounts. One window.</h3>
+    <p>Switch between personal, work, and client WhatsApps instantly. Split screen lets you view two conversations side by side. No more juggling phones.</p>
+  </div>
+  <div class="feature-visual-img">
+    <img src="screenshots/02-multi-account.png" alt="Switch between WhatsApp accounts instantly" loading="lazy">
+  </div>
+</div>
+
+<!-- FEATURE: AI Replies -->
+<div class="feature-visual reverse anim" style="background:#111B21;color:#fff;padding:80px 32px;border-radius:0;">
+  <div class="feature-visual-text">
+    <h3 style="color:#fff;">AI that writes like you.</h3>
+    <p style="color:rgba(255,255,255,0.6);">Context-aware reply suggestions that match your tone. Summarize long chats, translate in real-time, and draft professional responses in one click.</p>
+  </div>
+  <div class="feature-visual-img" style="border-radius:12px;">
+    <img src="screenshots/03-ai-features.png" alt="AI-powered smart replies" loading="lazy">
+  </div>
+</div>
+
+<!-- FEATURE: Schedule -->
+<div class="feature-visual anim">
+  <div class="feature-visual-text">
+    <h3>Send at the perfect time.</h3>
+    <p>Schedule messages across time zones. Set follow-up reminders. Never miss a window — SupaMsg sends while you sleep.</p>
+  </div>
+  <div class="feature-visual-img">
+    <img src="screenshots/04-schedule.png" alt="Schedule WhatsApp messages" loading="lazy">
+  </div>
+</div>
+
 <!-- MID CTA 1 -->
 <div class="mid-cta anim">
   <div class="inner">
     <h3>Ready to ditch the multi-phone chaos?</h3>
     <p>Download SupaMsg and get organized in 2 minutes.</p>
-    <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-primary">Download Free</a>
+    <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-primary">Download Free</a>
   </div>
 </div>
 
@@ -384,14 +451,37 @@
   </div>
 </section>
 
+<!-- FEATURE: Privacy -->
+<div class="feature-visual reverse anim">
+  <div class="feature-visual-text">
+    <h3>100% private. Always.</h3>
+    <p>We never read, store, or access your messages. Everything runs locally on your device. No cloud, no servers, no data leaves your Mac. WhatsApp's end-to-end encryption stays fully intact.</p>
+  </div>
+  <div class="feature-visual-img">
+    <img src="screenshots/05-privacy.png" alt="Your messages are 100% private" loading="lazy">
+  </div>
+</div>
+
 <!-- MID CTA 2 -->
 <div class="mid-cta anim">
   <div class="inner">
     <h3>That's 48 features. For free.</h3>
     <p>Well, the first 3 accounts are free. After that, it's still incredibly affordable.</p>
-    <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-primary">Get Started Free</a>
+    <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-primary">Get Started Free</a>
   </div>
 </div>
+
+<!-- iOS COMPANION -->
+<section class="section" style="background:#f0faf4;">
+  <div class="container text-center anim">
+    <p style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#25D366;margin-bottom:12px;">iPhone Companion</p>
+    <h2 style="font-size:40px;font-weight:800;letter-spacing:-1px;margin-bottom:8px;">Your accounts, in your pocket.</h2>
+    <p style="font-size:17px;color:#667781;max-width:500px;margin:0 auto;">Get notifications from all your WhatsApp accounts on your iPhone. Quick reply without opening the desktop app.</p>
+    <div class="screenshot-phone">
+      <img src="screenshots/08-ios-companion.png" alt="SupaMsg iOS companion app" loading="lazy">
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
 <section class="section">
@@ -440,7 +530,7 @@
     <div class="pricing-grid anim">
       <div class="p-card">
         <p class="tier">Free</p>
-        <p class="price">$0 <span>/forever</span></p>
+        <p class="price" data-inr="&#8377;0" data-usd="$0"><span>/forever</span></p>
         <span class="save">&nbsp;</span>
         <ul>
           <li>3 WhatsApp accounts</li>
@@ -448,12 +538,12 @@
           <li>5 message templates</li>
           <li>3 labels per account</li>
         </ul>
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-outline">Get Started Free</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-outline">Get Started Free</a>
       </div>
       <div class="p-card pop">
         <p class="tier">Pro</p>
-        <p class="price">$9 <span>/mo</span></p>
-        <span class="save">$79/yr — save 27%</span>
+        <p class="price" data-inr="&#8377;499" data-usd="$6"><span>/mo</span></p>
+        <span class="save" data-inr="&#8377;3,999/yr — save 33%" data-usd="$48/yr — save 33%"></span>
         <ul>
           <li>Unlimited accounts</li>
           <li>AI features (50/day)</li>
@@ -461,12 +551,12 @@
           <li>Split screen, stealth mode</li>
           <li>Export, analytics, voice transcription</li>
         </ul>
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-primary">Start Pro</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-primary">Start Pro</a>
       </div>
       <div class="p-card">
         <p class="tier">Business</p>
-        <p class="price">$19 <span>/mo</span></p>
-        <span class="save">$149/yr — save 35%</span>
+        <p class="price" data-inr="&#8377;999" data-usd="$12"><span>/mo</span></p>
+        <span class="save" data-inr="&#8377;7,999/yr — save 33%" data-usd="$96/yr — save 33%"></span>
         <ul>
           <li>Everything in Pro</li>
           <li>Unlimited AI</li>
@@ -474,7 +564,7 @@
           <li>CRM, Kanban, team inbox</li>
           <li>API access, white-label</li>
         </ul>
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-dark">Start Business</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-lg btn-dark">Start Business</a>
       </div>
     </div>
     <div class="guarantee anim">
@@ -483,6 +573,27 @@
     </div>
   </div>
 </section>
+<script>
+// Auto-detect currency: INR for India, USD for international
+(function() {
+  var isIndia = false;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    var lang = navigator.language || '';
+    isIndia = tz.indexOf('Calcutta') > -1 || tz.indexOf('Kolkata') > -1 || lang.indexOf('IN') > -1 || lang.startsWith('hi');
+  } catch(e) {}
+  var key = isIndia ? 'inr' : 'usd';
+  document.querySelectorAll('.price[data-inr]').forEach(function(el) {
+    var val = el.getAttribute('data-' + key);
+    var period = el.querySelector('span');
+    el.textContent = val + ' ';
+    if (period) el.appendChild(period);
+  });
+  document.querySelectorAll('.save[data-inr]').forEach(function(el) {
+    el.textContent = el.getAttribute('data-' + key);
+  });
+})();
+</script>
 
 <!-- FAQ -->
 <section id="faq" class="section">
@@ -522,8 +633,8 @@
       <h2>Download now — it's free</h2>
       <p>Join thousands of professionals who manage all their WhatsApps from one window.</p>
       <div class="final-cta-btns">
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl btn-primary">Download Free for Mac</a>
-        <a href="https://github.com/apaksh-gupta/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl" style="background:rgba(255,255,255,0.1);color:#fff;border:1.5px solid rgba(255,255,255,0.2);">Download for Windows</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl btn-primary">Download Free for Mac</a>
+        <a href="https://github.com/apaksh537/supamsg/releases/download/v1.0.0/SupaMsg-1.0.0-arm64.dmg" class="btn btn-xl" style="background:rgba(255,255,255,0.1);color:#fff;border:1.5px solid rgba(255,255,255,0.2);">Download for Windows</a>
       </div>
       <p style="font-size:13px;color:rgba(255,255,255,0.4);position:relative;">Free forever for 3 accounts. No credit card needed.</p>
       <div class="trust-badges">
