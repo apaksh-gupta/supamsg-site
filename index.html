@@ -108,6 +108,86 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; line-height: 1.2; 
 }
 
 /* ========================================
+   INSTALL GUIDE
+   ======================================== */
+.install-hint {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #666;
+}
+.install-hint a {
+  color: var(--green-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.install-guide {
+  display: none;
+  max-width: 640px;
+  margin: 32px auto 0;
+  background: #fff;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  text-align: left;
+}
+.install-guide.visible { display: block; }
+.install-guide h3 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.install-steps {
+  list-style: none;
+  counter-reset: step;
+}
+.install-steps li {
+  counter-increment: step;
+  padding: 12px 0;
+  border-bottom: 1px dashed #ddd;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.install-steps li:last-child { border-bottom: none; }
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--green);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.install-steps code {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+.install-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #f0faf4;
+  border-left: 4px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+/* ========================================
    SCROLL ANIMATIONS
    ======================================== */
 .reveal {
@@ -1059,6 +1139,19 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; line-height: 1.2; 
         </a>
         <a href="#features" class="btn btn-black">See Features</a>
       </div>
+      <p class="install-hint">macOS shows a warning on first open? <a onclick="document.getElementById('installGuide').classList.toggle('visible')">See install instructions</a></p>
+      <div class="install-guide" id="installGuide">
+        <h3>How to install SupaMsg on Mac</h3>
+        <ol class="install-steps">
+          <li><span class="step-num">1</span><div>Download the <strong>.dmg</strong> file and double-click to open it</div></li>
+          <li><span class="step-num">2</span><div>Drag <strong>SupaMsg</strong> to the <strong>Applications</strong> folder</div></li>
+          <li><span class="step-num">3</span><div>Open <strong>Applications</strong> in Finder, find SupaMsg, then <strong>right-click</strong> (or Control+click) and select <strong>"Open"</strong></div></li>
+          <li><span class="step-num">4</span><div>macOS will show a dialog — click <strong>"Open"</strong> to confirm. You only need to do this once!</div></li>
+        </ol>
+        <div class="install-note">
+          <strong>Why this extra step?</strong> SupaMsg is distributed directly (not through the Mac App Store), so macOS asks for your permission the first time. This is standard for apps like VS Code, Discord, and Obsidian. Your data stays 100% private and local.
+        </div>
+      </div>
     </div>
     <div class="hero-img-wrap reveal reveal-delay-2">
       <div class="hero-sticker">Works on<br>macOS!</div>
@@ -1447,6 +1540,17 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; line-height: 1.2; 
         </div>
       </div>
       <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question">
+          macOS says the app can't be opened. What do I do?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            This is normal for apps downloaded outside the Mac App Store. Simply right-click (or Control+click) the app in your Applications folder and select "Open". macOS will ask for confirmation — click "Open" and you're in. You only need to do this once. This is the same process for apps like VS Code, Discord, and Obsidian.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
         <button class="faq-question">
           Can I cancel my subscription anytime?
           <span class="faq-icon">+</span>
